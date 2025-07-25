@@ -1,8 +1,6 @@
-# Batman Futures Bot 🚀🦇
+this bot uses market structure analysis and risk management to send buy and sell signals to telegram.
 
-This bot analyzes market structure and applies risk management to deliver smart buy and sell signals directly to Telegram.
-
-📌 Features:
-- Detects BOS (Break of Structure), CHoCH (Change of Character), and FVG (Fair Value Gap) zones
-- Implements advanced risk-to-reward logic for precise TP and SL
-- Optionally executes trades on Binance Futures based on confirmed signals
+📌 features:
+- analyzes bos, choch, and fvg patterns
+- advanced risk management
+- optional order execution on binance futures
