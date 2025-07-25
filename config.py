@@ -1,4 +1,7 @@
-BINANCE_API_KEY = "your_binance_api_key"
-BINANCE_SECRET_KEY = "your_secret_key"
-TELEGRAM_TOKEN = "your_telegram_bot_token"
-CHAT_ID = "your_chat_id"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
