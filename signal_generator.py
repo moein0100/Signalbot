@@ -1,7 +1,15 @@
-from core.market_structure import analyze_market
-from core.risk_manager import calculate_tp_sl
+from market_structure import analyze_market
+from risk_manager import calculate_tp_sl
+from trend_analyzer import is_trend_valid
 
 def generate_signal():
-    market_data = analyze_market()
-    tp, sl = calculate_tp_sl(market_data)
-    return {"signal": market_data["action"], "TP": tp, "SL": sl}
+    structure = analyze_market()
+    if structure["action"] and is_trend_valid():
+        tp, sl = calculate_tp_sl(structure)
+        return {
+            "action": structure["action"],
+            "structure": structure["structure"],
+            "tp": tp,
+            "sl": sl
+        }
+    return None
