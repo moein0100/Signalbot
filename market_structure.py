@@ -1,3 +1,6 @@
 def analyze_market():
-    # Analyze BOS, CHoCH, FVG and overall market trend
-    return {"action": "buy", "structure": "CHoCH"}
+    # Analyze BOS, CHoCH, and FVG from price data (fetched via API or historical sources)
+    return {
+        "action": "Buy",  # or "Sell"
+        "structure": "CHoCH + FVG + BOS"
+    }
