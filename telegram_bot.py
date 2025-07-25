@@ -1,7 +1,9 @@
-import telegram
-from config import TELEGRAM_TOKEN, CHAT_ID
+import requests
+from config import TELEGRAM_TOKEN, TELEGRAM_CHAT_ID
+from formatter import format_signal
 
 def send_signal(signal_data):
-    bot = telegram.Bot(token=TELEGRAM_TOKEN)
-    message = f"Signal: {signal_data['signal']}\nTP: {signal_data['TP']}\nSL: {signal_data['SL']}"
-    bot.send_message(chat_id=CHAT_ID, text=message)
+    message = format_signal(signal_data)
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
+    payload = {"chat_id": TELEGRAM_CHAT_ID, "text": message}
+    requests.post(url, json=payload)
